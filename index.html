@@ -8,6 +8,8 @@
  <style>
   html {
 	    scroll-behavior: smooth;
+		-webkit-tap-highlight-color: transparent;
+        outline: none;
        }
 		   
   * {
@@ -22,6 +24,15 @@
 		padding: 0px;
 		margin-top: 70px;
 	   }
+	   
+  .source {
+           font-size: 14px; 
+		   color: #000088;
+          }
+		  
+  .source a:hover, .source a:active {
+                                     color: #5F8800;
+                                    }
 	
   .menu {
 	     padding: 10px;
@@ -438,6 +449,11 @@
 					                                      background-color: #f8f8f8;
 					                                      color: #000;
                                                          }
+														 
+							.mobile-menu-content a:active {
+					                                      background-color: #f8f8f8;
+					                                      color: #000;
+                                                          }
 							.row1 {
 							       left: 10%;
 							      }
@@ -608,7 +624,7 @@
 			and why learning from the past is key to understanding a sustainable future.
 		 </p>
 		 <br>
-		 <p style="font-size: 14px; color: #000088;"><a href="https://www.bgs.ac.uk/discovering-geology/">(British Geological Survey)</a></p>
+		 <p class="source" id="source"><a href="https://www.bgs.ac.uk/discovering-geology/">(British Geological Survey)</a></p>
 	  </div>
    </section>
 
