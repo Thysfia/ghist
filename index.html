@@ -411,6 +411,7 @@
 										  transform: translateY(100%); 
                                           transition: transform 0.3s ease;
 										  z-index: 103;
+										  touch-action: none;
 							             }
 							.mobile-menu.open {
 											   transform: translateY(0); 
@@ -541,19 +542,37 @@
       menu.classList.toggle("open");
 	                                    });
 										
-   let startY;
-   
+   let startY = 0;
+   let currentY = 0;
+   let isDragging = false;
+
    menu.addEventListener("touchstart", (e) => {
-      startY = e.touches[0].clientY;
-	                                          });
-											  
+                                               startY = e.touches[0].clientY;
+                                               isDragging = true;
+                                               menu.style.transition = "none";
+                                              });
+
    menu.addEventListener("touchmove", (e) => {
-      let currentY = e.touches[0].clientY;
-	  
-	  if (currentY - startY > 50) {
-	     menu.classList.remove("open");
-		                          }
-								             });
+                                              if (!isDragging) return;
+                                              currentY = e.touches[0].clientY;
+                                              let diff = currentY - startY;
+                                              if (diff > 0) {
+                                                             menu.style.transform = `translateY(${diff}px)`;
+                                                            }
+                                             });
+
+   menu.addEventListener("touchend", () => {
+                                            isDragging = false;
+                                            menu.style.transition = "transform 0.3s ease, opacity 0.3s ease";
+                                            if (currentY - startY > 100) {
+                                                                          menu.classList.remove("open");
+                                                                          menu.style.transform = "";
+                                                                         } else {
+                                                                                 menu.classList.add("open");
+                                                                                 menu.style.transform = "";
+                                                                                }
+                                          });
+
 										
    document.querySelectorAll(".mobile-menu-content a").forEach(link => {
                                                                         link.addEventListener("click", () => {
