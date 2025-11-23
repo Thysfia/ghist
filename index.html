@@ -25,14 +25,21 @@
 		margin-top: 70px;
 	   }
 	   
-  .source {
-           font-size: 14px; 
-		   color: #000088;
-          }
+  .linked-text-light a {
+		                color: #000088;
+                       }
 		  
-  .source a:hover, .source a:active {
-                                     color: #5F8800;
-                                    }
+  .linked-text-light a:hover, .linked-text-light a:active {
+                                                           color: #5F8800;
+                                                          }
+	
+  .linked-text-dark a {
+                       color: #FFFF33;
+                      }
+			   
+  .linked-text-dark a:hover, .linked-text-dark a:active {
+                                                         color: #A077FF;
+                                                        }
 	
   .menu {
 	     padding: 10px;
@@ -102,7 +109,7 @@
 		      background-position: center;
 			  background-repeat: no-repeat;
 	          width: 100%;
-		      height: 80%;
+		      height: 100%;
 		      margin: 0;	  
 	         }
 		
@@ -137,9 +144,10 @@
   .backrow3 {
              width: 100%;
              text-align: center;
+			 align-items: center;
 			 background-color: #f3f3f3;
-			 padding-top: 7%;
-			 height: 87%;
+			 padding: 7%;
+			 height: 100%;
             }   
 		
   .row3 {
@@ -168,7 +176,7 @@
          padding: 10px;
 	     margin-left: 10%;
 	     margin-right: 10%;
-         border-radius: 10px;
+         border-radius: 30px;
 	     background-color: #fff;
 	     color: #333333;
 		 transition: 0.2s;
@@ -177,22 +185,27 @@
   .center {
            width: 60%;    
           }
-				
+			
+  .backrow4 {
+             background-image: linear-gradient(to right, #000088, #3F3FA5);
+            }
+			
   .slider1 {
 	        display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: 0;
-            width: 100%%;
+            width: 100%;
             border-radius: 0px;
+			position: relative;
 	       }
 			   
   .slider1::-webkit-scrollbar {
                               display: none;
-						     }
+						      }
 			   
   .slider1 img {
-	            width: 80%;
+	            width: 100%;
                 height: auto;
                 scroll-snap-align: start;
                 border-radius: 0px;
@@ -209,6 +222,7 @@
 			 align-items: center;
 			 gap: 20px;
 			 padding: 20px;
+			 height: 100%;
 	        }
 				
   .view2 {
@@ -353,6 +367,73 @@
 				  font-size: 13px;
 				  opacity: 0.8;
                  }
+				 
+  .backrow5 {
+             background-image: linear-gradient(to right, #000088, #3F3FA5);
+			 margin: 0;
+			 display: flex;
+			 align-items: center;
+			 gap: 0px;
+			 padding-left: 7%;
+			 padding-right: 7%;
+			 height: relative;
+            }
+			
+  .row51 img {
+              width: 100%;
+	          max-width: 300px;
+	          height: auto;
+             }
+		 
+  .row5 {
+         flex: 1;
+        }
+		
+  .row5 h1 {
+            color: #f9f9f9;
+		    font-style: italic;
+           }
+		   
+  .row5 p {
+           color: #f4f4f4;
+		   font-size: 110%;
+          }
+		  
+  .row51 p {
+            text-align: center;
+           }
+			 
+  .backrow6 {
+             background-image: linear-gradient(to right, #000088, #3F3FA5);
+			 text-align: left;
+			 height: 100%;
+            }
+
+
+  .backrow6 h1 {
+                color: #f9f9f9;
+				font-style: italic;
+				text-align: center;
+				background-color: #3F3FA5;
+               }
+			
+  .label {
+          font-size: 16px;
+          fill: #f4f4f4;
+          font-weight: bold;
+          opacity: 0;
+          filter: blur(6px);
+          transition: .3s ease;
+         }
+		 
+  .show {
+         opacity: 1;
+         filter: blur(0);
+        }
+
+  .click-point {
+                cursor: pointer;
+               }
 			 
   @media (max-width: 768px) {
 	                         .menu ul {
@@ -384,14 +465,14 @@
                                         text-align: center;
                                        }
 							.view2 video {
-								           max-width: 80%;
-								          }
+								          max-width: 80%;
+								         }
 							.sidebar {
 							          display: none;
 									 }
-			                main {
-							      margin-left: 0;
-								 }
+			                 main {
+							       margin-left: 0;
+								  }
 						    .mobile-nav {
 							             display: block;
 										 position: fixed;
@@ -423,6 +504,9 @@
                                           transition: transform 0.3s ease;
 										  z-index: 103;
 										  touch-action: none;
+										  max-height: 70vh;
+                                          overflow-y: auto;
+                                          -webkit-overflow-scrolling: touch;
 							             }
 							.mobile-menu.open {
 											   transform: translateY(0); 
@@ -477,11 +561,21 @@
 							           }
 							.backrow3 {
 							           height: 100%;
+									   padding: 22px;
 							          }
 							.item {
 							       padding: 9px;
 								   font-size: 90%;
 							      }
+							.backrow5 {
+                                       flex-direction: column;  
+                                       text-align: center;
+                                      }
+							.row51 {
+							        padding-top: 4%;
+									max-width: 70%;
+							       }
+								  
 			               }
  </style>
 </head>
@@ -527,9 +621,9 @@
    <div class="sidebar-content">
       <a href="#backrow2">What Geology Studies</a>
       <a href="#backrow3">The Best Subject Combos to Study Geology</a>
-      <a href="#backrow4">Structure of Earth</a>
-      <a href="#">Part1</a>
-      <a href="#">Part1</a>
+      <a href="#backrow5">Structure of Earth</a>
+      <a href="#backrow6">↪ Chemically</a>
+      <a href="#backrow7">↪ Mechanically</a>
    </div>
 </div>
 
@@ -544,9 +638,9 @@
    <div class="mobile-menu-content">
       <a href="#backrow2">What Geology Studies</a>
 	  <a href="#backrow3">The Best Subject Combos to Study Geology</a>
-	  <a href="#backrow4">Structure of Earth</a>
-	  <a href="#backrow5">Part4</a>
-	  <a href="#">Part5</a>
+	  <a href="#backrow5">Structure of Earth</a>
+	  <a href="#backrow6">↪ Chemically</a>
+	  <a href="#backrow7">↪ Mechanically</a>
    </div>
 </div>
 
@@ -618,13 +712,13 @@
 	     <h1>What Geology Studies</h1>
 		 <br>
 	     <p>
-		    Geology reveals the processes that have shaped the landscape of the present and the past, 
-			as well as how the diverse rocks and minerals on our planet were formed. 
-			Geology also studies how rocks and fossils can be used to explain past climate change, 
-			and why learning from the past is key to understanding a sustainable future.
+		    Geology reveals the processes that have shaped the landscape of the Earth, whether in the present or in the past. 
+			With geology, we can learn how the diverse rocks and minerals on our planet were formed and distributed. 
+			We can also study how rocks and fossils can be used to explain past climate change, 
+			and why learning from the past is the key to reach a sustainable future.
 		 </p>
 		 <br>
-		 <p class="source" id="source"><a href="https://www.bgs.ac.uk/discovering-geology/">(British Geological Survey)</a></p>
+		 <p class="linked-text-light"><a href="https://www.bgs.ac.uk/discovering-geology/">(British Geological Survey.)</a></p>
 	  </div>
    </section>
 
@@ -667,13 +761,66 @@
 		 <img src="gallery/image/rock-beach.jpg">
 	  </div>
    </section>
-   <section class="backrow5">
+   <section class="backrow5" id="backrow5">
       <div class="row5">
 	     <h1>Structure of Earth</h1>
-		 <p></p>
+		 <br>
+		 <p>
+		 Earth is not just a solid ball—or sphere, to be exact. 
+		 It consists of several layers, each of which is different. 
+		 There are two ways to divide the layers: chemically, and mechanically.
+		 </p>
+		 <br>
+		 <p class="linked-text-dark">I highly recommend you to watch 
+		    <a href="https://youtu.be/uwy9Z3xbdxE?si=WcGzRcUQjEZ6rj-f">this video</a>
+			first before you start taking notes.
+	     </p>
 	  </div>
-	  <div class="earth-structure">
-	     <img src="">
+	  <div class="row51">
+		    <img src="gallery/icon/earth-structure.png">
+			<p class="linked-text-dark">
+			   <a href="https://www.freepik.com/free-vector/layers-earth-lithosphere_37589838.htm#from_element=cross_selling__vector">
+			   (freepik.com)
+			   </a>
+			</p>
+	  </div>
+   </section>
+   <section class="backrow6" id="backrow6">
+      <div class="row6">
+	     <h1>1. Chemical</h1>
+	  </div>
+	  <br>
+	  <div class="row61">
+	     <svg viewBox="0 0 500 500">
+            <circle cx="30" cy="100" r="100" fill="#3a7d3a"/>
+            <circle cx="30" cy="100" r="90" fill="#d2691e"/>
+            <circle cx="30" cy="100" r="50" fill="#ff944d"/>
+            <circle cx="30" cy="100" r="25" fill="#ffe066"/>
+			
+			<circle class="click-point" onclick="toggle('crust')" cx="93" cy="30" r="7" fill="#f4f4f4"/>
+            <circle class="click-point" onclick="toggle('mantle')" cx="95" cy="70" r="7" fill="#f4f4f4"/>
+            <circle class="click-point" onclick="toggle('outer')" cx="67" cy="105" r="7" fill="#f4f4f4"/>
+            <circle class="click-point" onclick="toggle('inner')" cx="30" cy="100" r="7" fill="#f4f4f4"/>
+			
+		    <line x1="93" y1="30" x2="180" y2="30" stroke="#f4f4f4" stroke-width="2"/>
+            <line x1="95" y1="70" x2="200" y2="90" stroke="#f4f4f4" stroke-width="2"/>
+            <line x1="67" y1="105" x2="200" y2="170" stroke="#f4f4f4" stroke-width="2"/>
+            <line x1="30" y1="100" x2="150" y2="220" stroke="#f4f4f4" stroke-width="2"/>
+  
+            <text id="crust"  class="label" x="190" y="35"><a href="#backrow1">CRUST</a></text>
+            <text id="mantle" class="label" x="210" y="95">MANTLE</text>
+            <text id="outer"  class="label" x="210" y="175">OUTER CORE</text>
+            <text id="inner"  class="label" x="160"  y="225">INNER CORE</text>
+         </svg>
+	  </div>
+	  <script>
+	  function toggle(id){
+                          document.getElementById(id).classList.toggle("show")
+                         }
+	  </script>
+   </section>
+   <section class="backrow7">
+      <div class="row7">
 	  </div>
    </section>
    <footer>
